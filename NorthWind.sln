@@ -1,0 +1,38 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.14.36301.6 d17.14
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{00D1A9C2-B5F0-4AF3-8072-F6C62B433612}") = "NorthWindOLTP", "NorthWind\NorthWindOLTP.sqlproj", "{AC65DD08-B168-4D42-8E5B-EDDB095E9409}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "OLTP", "OLTP", "{02EA681E-C7D8-13C7-8484-4AC65E1B71E8}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ETL", "ETL", "{0273A4C1-9C07-4958-A2C4-0A1486D504C6}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "OLAP", "OLAP", "{3B2F0CB1-E004-4987-B245-AD2A37017866}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "DataWarehouse", "DataWarehouse", "{B0AEC41F-DFD0-49EF-92F0-7BEA68254178}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{AC65DD08-B168-4D42-8E5B-EDDB095E9409}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AC65DD08-B168-4D42-8E5B-EDDB095E9409}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AC65DD08-B168-4D42-8E5B-EDDB095E9409}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{AC65DD08-B168-4D42-8E5B-EDDB095E9409}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AC65DD08-B168-4D42-8E5B-EDDB095E9409}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AC65DD08-B168-4D42-8E5B-EDDB095E9409}.Release|Any CPU.Deploy.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{AC65DD08-B168-4D42-8E5B-EDDB095E9409} = {02EA681E-C7D8-13C7-8484-4AC65E1B71E8}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {E07E2B8E-FA1F-4662-8368-19064A764317}
+	EndGlobalSection
+EndGlobal
