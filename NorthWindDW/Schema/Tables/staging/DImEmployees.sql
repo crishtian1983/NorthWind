@@ -1,5 +1,6 @@
-﻿CREATE TABLE [dbo].[Employees](
-	[EmployeeID] [int] IDENTITY(1,1) NOT NULL,
+﻿CREATE TABLE staging.DimEmployees(
+	[EmployeeSK] [int] NOT NULL,
+	[EmployeeID] [int] NOT NULL,
 	[LastName] [nvarchar](20) NOT NULL,
 	[FirstName] [nvarchar](10) NOT NULL,
 	[Title] [nvarchar](30) NULL,
@@ -17,12 +18,6 @@
 	[Notes] [nvarchar](max) NULL,
 	[ReportsTo] [int] NULL,
 	[PhotoPath] [nvarchar](255) NULL,
-	[rowversion] [timestamp] NULL,
- CONSTRAINT [PK_Employees] PRIMARY KEY CLUSTERED 
-(
-	[EmployeeID] ASC
-)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
-) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
-GO
-
-
+	[TerritoryDescription] [nchar](50) NOT NULL,
+	[RegionDescription] [nchar](50) NOT NULL
+);

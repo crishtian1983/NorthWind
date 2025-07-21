@@ -3,16 +3,16 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <Name>NorthWindOLTP</Name>
+    <Name>NorthWindDW</Name>
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectVersion>4.1</ProjectVersion>
-    <ProjectGuid>{ac65dd08-b168-4d42-8e5b-eddb095e9409}</ProjectGuid>
+    <ProjectGuid>{13b70142-3cbb-4814-b179-1bdb2a1f9ea8}</ProjectGuid>
     <DSP>Microsoft.Data.Tools.Schema.Sql.Sql160DatabaseSchemaProvider</DSP>
     <OutputType>Database</OutputType>
     <RootPath>
     </RootPath>
-    <RootNamespace>NorthWind</RootNamespace>
-    <AssemblyName>NorthWind</AssemblyName>
+    <RootNamespace>NorthWindDW</RootNamespace>
+    <AssemblyName>NorthWindDW</AssemblyName>
     <ModelCollation>1033, CI</ModelCollation>
     <DefaultFileStructure>BySchemaAndSchemaType</DefaultFileStructure>
     <DeployToDatabase>True</DeployToDatabase>
@@ -57,24 +57,25 @@
   <ItemGroup>
     <Folder Include="Properties" />
     <Folder Include="Schema" />
-    <Folder Include="Schema\Programibility" />
-    <Folder Include="Schema\Tables" />
+    <Folder Include="Schema\Programability" />
     <Folder Include="Schema\Security" />
+    <Folder Include="Schema\Tables" />
+    <Folder Include="Schema\Tables\staging" />
+    <Folder Include="Schema\Tables\Base" />
   </ItemGroup>
   <ItemGroup>
-    <Build Include="Schema\Tables\Customers.sql" />
-    <Build Include="Schema\Tables\EMployees.sql" />
-    <Build Include="Schema\Tables\EmployeeTerritories.sql" />
-    <Build Include="Schema\Tables\OrderDetails.sql" />
-    <Build Include="Schema\Tables\Orders.sql" />
-    <Build Include="Schema\Tables\Products.sql" />
-    <Build Include="Schema\Tables\Region.sql" />
-    <Build Include="Schema\Tables\Shippers.sql" />
-    <Build Include="Schema\Tables\Suppliers.sql" />
-    <Build Include="Schema\Tables\Territories.sql" />
-    <Build Include="Schema\Tables\Categories.sql" />
-    <Build Include="Schema\Tables\CustomerCustomerDemo.sql" />
-    <Build Include="Schema\Tables\CustomerDemographics.sql" />
-    <Build Include="Schema\Programibility\GetDatabaseRowVersion.sql" />
+    <Build Include="Schema\Tables\staging\DImEmployees.sql" />
+    <Build Include="Schema\Tables\staging\DimSuppliers.sql" />
+    <Build Include="Schema\Tables\staging\DimProducts.sql" />
+    <Build Include="Schema\Tables\staging\DimShippers.sql" />
+    <Build Include="Schema\Tables\staging\FactOrders.sql" />
+    <Build Include="Schema\Tables\Base\DimDate.sql" />
+    <Build Include="Schema\Tables\Base\DimEmployees.sql" />
+    <Build Include="Schema\Tables\Base\DimProducts.sql" />
+    <Build Include="Schema\Tables\Base\DimShippers.sql" />
+    <Build Include="Schema\Tables\Base\DImSuppliers.sql" />
+    <Build Include="Schema\Tables\Base\FactOrders.sql" />
+    <Build Include="Schema\Tables\staging\DImCustomer.sql" />
+    <Build Include="Schema\Tables\Base\DimCustomer.sql" />
   </ItemGroup>
 </Project>
