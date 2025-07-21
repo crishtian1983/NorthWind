@@ -1,4 +1,4 @@
-# Práctica del módulo `Data Mangement and Business Intelligence`
+# Práctica del módulo `Data Management and Business Intelligence`
 ## Integrantes del grupo
 - JUANITO ORTEGA GUZMAN
 - ERIKA MILENKA URIONA URQUIETA
