@@ -61,7 +61,7 @@
     <Folder Include="Schema\Security" />
     <Folder Include="Schema\Tables" />
     <Folder Include="Schema\Tables\staging" />
-    <Folder Include="Schema\Tables\Base" />
+    <Folder Include="Schema\Tables\dbo" />
   </ItemGroup>
   <ItemGroup>
     <Build Include="Schema\Tables\staging\DImEmployees.sql" />
@@ -69,13 +69,13 @@
     <Build Include="Schema\Tables\staging\DimProducts.sql" />
     <Build Include="Schema\Tables\staging\DimShippers.sql" />
     <Build Include="Schema\Tables\staging\FactOrders.sql" />
-    <Build Include="Schema\Tables\Base\DimDate.sql" />
-    <Build Include="Schema\Tables\Base\DimEmployees.sql" />
-    <Build Include="Schema\Tables\Base\DimProducts.sql" />
-    <Build Include="Schema\Tables\Base\DimShippers.sql" />
-    <Build Include="Schema\Tables\Base\DImSuppliers.sql" />
-    <Build Include="Schema\Tables\Base\FactOrders.sql" />
+    <Build Include="Schema\Tables\dbo\DimDate.sql" />
+    <Build Include="Schema\Tables\dbo\DimEmployees.sql" />
+    <Build Include="Schema\Tables\dbo\DimProducts.sql" />
+    <Build Include="Schema\Tables\dbo\DimShippers.sql" />
+    <Build Include="Schema\Tables\dbo\DImSuppliers.sql" />
+    <Build Include="Schema\Tables\dbo\FactOrders.sql" />
     <Build Include="Schema\Tables\staging\DImCustomer.sql" />
-    <Build Include="Schema\Tables\Base\DimCustomer.sql" />
+    <Build Include="Schema\Tables\dbo\DimCustomer.sql" />
   </ItemGroup>
 </Project>
