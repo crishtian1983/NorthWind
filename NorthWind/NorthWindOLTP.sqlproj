@@ -57,9 +57,10 @@
   <ItemGroup>
     <Folder Include="Properties" />
     <Folder Include="Schema" />
-    <Folder Include="Schema\Programibility" />
+    <Folder Include="Schema\Programmability" />
     <Folder Include="Schema\Tables" />
     <Folder Include="Schema\Security" />
+    <Folder Include="Schema\Programmability\Stored Procedures" />
   </ItemGroup>
   <ItemGroup>
     <Build Include="Schema\Tables\Customers.sql" />
@@ -75,6 +76,19 @@
     <Build Include="Schema\Tables\Categories.sql" />
     <Build Include="Schema\Tables\CustomerCustomerDemo.sql" />
     <Build Include="Schema\Tables\CustomerDemographics.sql" />
-    <Build Include="Schema\Programibility\GetDatabaseRowVersion.sql" />
+    <Build Include="Schema\Programmability\Stored Procedures\GetDatabaseRowVersion.sql" />
+    <Build Include="Schema\Programmability\Stored Procedures\GetOrdersChangesByRowVersion.sql" />
+    <Build Include="Schema\Programmability\Stored Procedures\GetCategoriesChangesByRowVersion.sql" />
+    <Build Include="Schema\Programmability\Stored Procedures\GetCustomerCustomerDemoChangesByRowVersion.sql" />
+    <Build Include="Schema\Programmability\Stored Procedures\GetCustomerDemographicsChangesByRowVersion.sql" />
+    <Build Include="Schema\Programmability\Stored Procedures\GetCustomersChangesByRowVersion.sql" />
+    <Build Include="Schema\Programmability\Stored Procedures\GetEmployeesChangesByRowVersion.sql" />
+    <Build Include="Schema\Programmability\Stored Procedures\GetEMployeeTerritoriesChangesByRowVersion.sql" />
+    <Build Include="Schema\Programmability\Stored Procedures\GetOrdersDetailChangesByRowVersion.sql" />
+    <Build Include="Schema\Programmability\Stored Procedures\GetProductsChangesByRowVersion.sql" />
+    <Build Include="Schema\Programmability\Stored Procedures\GetRegionChangesByRowVersion.sql" />
+    <Build Include="Schema\Programmability\Stored Procedures\GetShippersChangesByRowVersion.sql" />
+    <Build Include="Schema\Programmability\Stored Procedures\GetSuppliersChangesByRowVersion.sql" />
+    <Build Include="Schema\Programmability\Stored Procedures\GetTerritoriesChangesByRowVersion.sql" />
   </ItemGroup>
 </Project>

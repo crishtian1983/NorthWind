@@ -57,11 +57,12 @@
   <ItemGroup>
     <Folder Include="Properties" />
     <Folder Include="Schema" />
-    <Folder Include="Schema\Programability" />
+    <Folder Include="Schema\Programmability" />
     <Folder Include="Schema\Security" />
     <Folder Include="Schema\Tables" />
     <Folder Include="Schema\Tables\staging" />
     <Folder Include="Schema\Tables\dbo" />
+    <Folder Include="Schema\Programmability\Stored Procedures" />
   </ItemGroup>
   <ItemGroup>
     <Build Include="Schema\Tables\staging\DImEmployees.sql" />
@@ -77,5 +78,13 @@
     <Build Include="Schema\Tables\dbo\FactOrders.sql" />
     <Build Include="Schema\Tables\staging\DImCustomer.sql" />
     <Build Include="Schema\Tables\dbo\DimCustomer.sql" />
+    <Build Include="Schema\Tables\dbo\PackageConfig.sql" />
+    <Build Include="Schema\Programmability\Stored Procedures\DW_MergeDimCustomer.sql" />
+    <Build Include="Schema\Programmability\Stored Procedures\DW_MergeDimEmployees.sql" />
+    <Build Include="Schema\Programmability\Stored Procedures\DW_MergeDimProducts.sql" />
+    <Build Include="Schema\Programmability\Stored Procedures\DW_MergeDimShippers.sql" />
+    <Build Include="Schema\Programmability\Stored Procedures\DW_MergeDimSuppliers.sql" />
+    <Build Include="Schema\Programmability\Stored Procedures\UpdateLastPackageRowVersion.sql" />
+    <Build Include="Schema\Programmability\Stored Procedures\GetLastPackageRowVersion.sql" />
   </ItemGroup>
 </Project>
