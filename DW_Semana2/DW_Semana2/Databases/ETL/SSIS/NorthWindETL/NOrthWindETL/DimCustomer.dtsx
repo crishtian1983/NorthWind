@@ -1,4 +1,4 @@
-﻿<?xml version="1.0"?>
+<?xml version="1.0"?>
 <DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
   DTS:refId="Package"
   DTS:CreationDate="7/26/2025 8:45:17 PM"
@@ -11,8 +11,8 @@
   DTS:LocaleID="2058"
   DTS:ObjectName="Package"
   DTS:PackageType="5"
-  DTS:VersionBuild="19"
-  DTS:VersionGUID="{3850D953-5804-43C2-B30C-29182650E59F}">
+  DTS:VersionBuild="21"
+  DTS:VersionGUID="{FF9C28BF-E7CA-4EE3-B8D9-9BC0C1711E22}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -25,7 +25,7 @@
         <DTS:ConnectionManager
           DTS:ConnectRetryCount="1"
           DTS:ConnectRetryInterval="5"
-          DTS:ConnectionString="Data Source=localhost;Initial Catalog=NorthWindDW;Provider=MSOLEDBSQL.1;Integrated Security=SSPI;Application Name=SSIS-Package-{C85C7AAF-370A-4183-9081-ACC1CA55C680}localhost.NorthWindDW;Auto Translate=False;" />
+          DTS:ConnectionString="Data Source=localhost;Initial Catalog=NorthWindDW;Provider=MSOLEDBSQL;Integrated Security=SSPI;Application Name=SSIS-Package-{C85C7AAF-370A-4183-9081-ACC1CA55C680}localhost.NorthWindDW;Auto Translate=False;" />
       </DTS:ObjectData>
     </DTS:ConnectionManager>
     <DTS:ConnectionManager
@@ -37,7 +37,7 @@
         <DTS:ConnectionManager
           DTS:ConnectRetryCount="1"
           DTS:ConnectRetryInterval="5"
-          DTS:ConnectionString="Data Source=localhost;Initial Catalog=NorthWindOLTP;Provider=MSOLEDBSQL.1;Integrated Security=SSPI;Application Name=SSIS-Package-{085DCEC8-9827-445C-8C47-0546955A5124}localhost.NorthWindOLTP;Auto Translate=False;" />
+          DTS:ConnectionString="Data Source=localhost;Initial Catalog=NorthWindOLTP;Provider=MSOLEDBSQL;Integrated Security=SSPI;Application Name=SSIS-Package-{085DCEC8-9827-445C-8C47-0546955A5124}localhost.NorthWindOLTP;Auto Translate=False;" />
       </DTS:ObjectData>
     </DTS:ConnectionManager>
   </DTS:ConnectionManagers>
@@ -1224,6 +1224,14 @@ where [refTable].[CustomerID] = ?</property>
       <GraphLayout
         Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
+          Size="178,42"
+          Id="Package\CLean -staging area"
+          TopLeft="405,202" />
+        <NodeLayout
+          Size="155,42"
+          Id="Package\Data Flow Task"
+          TopLeft="407,295" />
+        <NodeLayout
           Size="211,42"
           Id="Package\Get Database RowVersion"
           TopLeft="388,53" />
@@ -1231,6 +1239,14 @@ where [refTable].[CustomerID] = ?</property>
           Size="180,42"
           Id="Package\Get LastRowVersion"
           TopLeft="403,133" />
+        <NodeLayout
+          Size="168,42"
+          Id="Package\Sync Staging data"
+          TopLeft="415,372" />
+        <NodeLayout
+          Size="197,42"
+          Id="Package\Update lastRow Version"
+          TopLeft="416,450" />
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Restricción]"
           TopLeft="493.25,95">
@@ -1253,10 +1269,6 @@ where [refTable].[CustomerID] = ?</property>
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <NodeLayout
-          Size="178,42"
-          Id="Package\CLean -staging area"
-          TopLeft="405,202" />
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Restricción 1]"
           TopLeft="493.5,175">
@@ -1279,36 +1291,32 @@ where [refTable].[CustomerID] = ?</property>
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <NodeLayout
-          Size="155,42"
-          Id="Package\Data Flow Task"
-          TopLeft="404,293" />
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Restricción 2]"
           TopLeft="494,244">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="-12.5,49"
+              EndConnector="-9.5,51"
               Start="0,0"
-              End="-12.5,41.5">
+              End="-9.5,43.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,20.5" />
+                    End="0,21.5" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,20.5"
-                    Point2="0,24.5"
-                    Point3="-4,24.5" />
+                    Point1="0,21.5"
+                    Point2="0,25.5"
+                    Point3="-4,25.5" />
                   <mssgle:LineSegment
-                    End="-8.5,24.5" />
+                    End="-5.5,25.5" />
                   <mssgle:CubicBezierSegment
-                    Point1="-8.5,24.5"
-                    Point2="-12.5,24.5"
-                    Point3="-12.5,28.5" />
+                    Point1="-5.5,25.5"
+                    Point2="-9.5,25.5"
+                    Point3="-9.5,29.5" />
                   <mssgle:LineSegment
-                    End="-12.5,41.5" />
+                    End="-9.5,43.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -1317,36 +1325,32 @@ where [refTable].[CustomerID] = ?</property>
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <NodeLayout
-          Size="168,42"
-          Id="Package\Sync Staging data"
-          TopLeft="415,372" />
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Restricción 3]"
-          TopLeft="481.5,335">
+          TopLeft="484.5,337">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="17.5,37"
+              EndConnector="14.5,35"
               Start="0,0"
-              End="17.5,29.5">
+              End="14.5,27.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,14.5" />
+                    End="0,13.5" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,14.5"
-                    Point2="0,18.5"
-                    Point3="4,18.5" />
+                    Point1="0,13.5"
+                    Point2="0,17.5"
+                    Point3="4,17.5" />
                   <mssgle:LineSegment
-                    End="13.5,18.5" />
+                    End="10.5,17.5" />
                   <mssgle:CubicBezierSegment
-                    Point1="13.5,18.5"
-                    Point2="17.5,18.5"
-                    Point3="17.5,22.5" />
+                    Point1="10.5,17.5"
+                    Point2="14.5,17.5"
+                    Point3="14.5,21.5" />
                   <mssgle:LineSegment
-                    End="17.5,29.5" />
+                    End="14.5,27.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -1355,10 +1359,6 @@ where [refTable].[CustomerID] = ?</property>
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <NodeLayout
-          Size="197,42"
-          Id="Package\Update lastRow Version"
-          TopLeft="416,450" />
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Restricción 4]"
           TopLeft="499,414">
@@ -1402,13 +1402,21 @@ where [refTable].[CustomerID] = ?</property>
       <GraphLayout
         Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
+          Size="115,42"
+          Id="Package\Data Flow Task\Lookup"
+          TopLeft="358,204" />
+        <NodeLayout
+          Size="174,42"
+          Id="Package\Data Flow Task\Add New Customer"
+          TopLeft="502,286" />
+        <NodeLayout
           Size="147,42"
           Id="Package\Data Flow Task\Get Customer"
           TopLeft="346,100" />
         <NodeLayout
-          Size="115,42"
-          Id="Package\Data Flow Task\Lookup"
-          TopLeft="358,204" />
+          Size="144,42"
+          Id="Package\Data Flow Task\Load Staging"
+          TopLeft="281,328" />
         <EdgeLayout
           Id="Package\Data Flow Task.Paths[OLE DB Source Output]"
           TopLeft="417.5,142">
@@ -1431,50 +1439,6 @@ where [refTable].[CustomerID] = ?</property>
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <NodeLayout
-          Size="144,42"
-          Id="Package\Data Flow Task\Load Staging"
-          TopLeft="281,328" />
-        <EdgeLayout
-          Id="Package\Data Flow Task.Paths[Lookup Match Output]"
-          TopLeft="397.666666666667,246">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="-44.6666666666667,82"
-              Start="0,0"
-              End="-44.6666666666667,74.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,29.47512864494" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,29.47512864494"
-                    Point2="0,33.47512864494"
-                    Point3="-4,33.47512864494" />
-                  <mssgle:LineSegment
-                    End="-40.6666666666667,33.47512864494" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-40.6666666666667,33.47512864494"
-                    Point2="-44.6666666666667,33.47512864494"
-                    Point3="-44.6666666666667,37.47512864494" />
-                  <mssgle:LineSegment
-                    End="-44.6666666666667,74.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="-70.5247200520834,38.47512864494,96.3827734375,11.609375"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <NodeLayout
-          Size="174,42"
-          Id="Package\Data Flow Task\Add New Customer"
-          TopLeft="502,286" />
         <EdgeLayout
           Id="Package\Data Flow Task.Paths[Lookup No Match Output]"
           TopLeft="433.333333333333,246">
@@ -1511,24 +1475,52 @@ where [refTable].[CustomerID] = ?</property>
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Data Flow Task.Paths[Lookup Match Output]"
+          TopLeft="397.666666666667,246">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-44.6666666666667,82"
+              Start="0,0"
+              End="-44.6666666666667,74.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,29.47512864494" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,29.47512864494"
+                    Point2="0,33.47512864494"
+                    Point3="-4,33.47512864494" />
+                  <mssgle:LineSegment
+                    End="-40.6666666666667,33.47512864494" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-40.6666666666667,33.47512864494"
+                    Point2="-44.6666666666667,33.47512864494"
+                    Point3="-44.6666666666667,37.47512864494" />
+                  <mssgle:LineSegment
+                    End="-44.6666666666667,74.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-70.5247200520834,38.47512864494,96.3827734375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
       </GraphLayout>
     </LayoutInfo>
   </TaskHost>
-  <PipelineComponentMetadata
-    design-time-name="Package\Data Flow Task\Get Customer">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
   <PipelineComponentMetadata
     design-time-name="Package\Data Flow Task\Lookup">
     <Properties>
       <Property>
         <Name>OverwriteParamsSQLProp</Name>
         <Value
-          type="q2:boolean">false</Value>
+          type="q2:string">false</Value>
       </Property>
       <Property>
         <Name>UsedTableName</Name>
@@ -1538,7 +1530,7 @@ where [refTable].[CustomerID] = ?</property>
       <Property>
         <Name>TableInfoObjectType</Name>
         <Value
-          type="q4:int">0</Value>
+          type="q4:string">0</Value>
       </Property>
       <Property>
         <Name>DataSourceViewID</Name>
@@ -1546,7 +1538,7 @@ where [refTable].[CustomerID] = ?</property>
     </Properties>
   </PipelineComponentMetadata>
   <PipelineComponentMetadata
-    design-time-name="Package\Data Flow Task\Load Staging">
+    design-time-name="Package\Data Flow Task\Add New Customer">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>
@@ -1559,7 +1551,15 @@ where [refTable].[CustomerID] = ?</property>
     </Properties>
   </PipelineComponentMetadata>
   <PipelineComponentMetadata
-    design-time-name="Package\Data Flow Task\Add New Customer">
+    design-time-name="Package\Data Flow Task\Get Customer">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Data Flow Task\Load Staging">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>
