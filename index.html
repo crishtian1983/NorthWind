@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Presentación Módulo IV</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background: #f0f0f0;
+      color: #333;
+    }
+    .slide {
+      display: none;
+      padding: 60px;
+      height: 100vh;
+      box-sizing: border-box;
+      text-align: center;
+      background-color: white;
+    }
+    .slide.active {
+      display: block;
+    }
+    h1, h2 {
+      margin-bottom: 20px;
+    }
+    .icon {
+      font-size: 80px;
+      margin-bottom: 20px;
+      color: #005f99;
+    }
+    .nav-buttons {
+      position: fixed;
+      bottom: 20px;
+      width: 100%;
+      text-align: center;
+    }
+    button {
+      padding: 10px 20px;
+      font-size: 16px;
+      margin: 0 10px;
+      cursor: pointer;
+    }
+  </style>
+  <script>
+    let currentSlide = 0;
+    function showSlide(index) {
+      const slides = document.querySelectorAll('.slide');
+      if (index < 0 || index >= slides.length) return;
+      slides[currentSlide].classList.remove('active');
+      currentSlide = index;
+      slides[currentSlide].classList.add('active');
+    }
+    function nextSlide() { showSlide(currentSlide + 1); }
+    function prevSlide() { showSlide(currentSlide - 1); }
+    window.onload = () => showSlide(0);
+  </script>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+
+  <div class="slide active">
+    <img class="icon" src="img/img1.png" alt="" height="400">
+    <h1>OLTP - Procesamiento de Transacciones</h1>
+    <p>Se desarrollaron todos los procedimientos almacenados necesarios para alimentar nuestro Data Warehouse desde las bases transaccionales (OLTP).</p>
+  </div>
+
+  <div class="slide">
+    <img class="icon" src="img/img2.png" alt="" height="400">
+    <h1>DW - Data Warehouse</h1>
+    <p>Se diseñó y creó la estructura del Data Warehouse, incluyendo dimensiones, tablas de hechos y procedimientos para integrarlos. También se implementó un esquema <strong>Staging</strong> con sus respectivas tablas para gestionar datos intermedios.</p>
+  </div>
+
+  <div class="slide">
+    <img class="icon" src="img/img3.png" alt="" height="400">
+    <h1>ETL - Extracción, Transformación y Carga</h1>
+    <p>Se implementaron paquetes ETL para cada dimensión y tabla de hechos, asegurando la correcta transformación y carga de los datos hacia el DW.</p>
+  </div>
+
+  <div class="slide">
+    <img class="icon" src="img/img4.png" alt="" height="400">
+    <h1>OLAP - Análisis Multidimensional</h1>
+    <p>Se realizó el análisis OLAP utilizando Analysis Services, creando medidas como total de ventas, productos vendidos, descuentos aplicados, promedio de valor por pedido, entre otros.</p>
+  </div>
+
+  <div class="slide">
+    <img class="icon" src="img/img5.png" alt="" height="400">
+    <h1>Visualización con Power BI</h1>
+    <p>La información fue visualizada en Power BI conectando con Analysis Services, permitiendo explorar métricas clave para la toma de decisiones del negocio.</p>
+  </div>
+
+  <div class="slide">
+    <h1>Integrantes del grupo</h1>
+    <ul style="font-size: 24px; text-align: left; max-width: 600px; margin: 40px auto; line-height: 1.8;">
+      <li>JUANITO ORTEGA GUZMAN</li>
+      <li>ERIKA MILENKA URIONA URQUIETA</li>
+      <li>RONAL SILVIO CALISAYA MERLO</li>
+      <li>GROVER STEVEN VALVERDE SAAVEDRA</li>
+      <li>CRISTHIAN BARRANCOS HARRIAGUE</li>
+    </ul>
+  </div>
+
+  <div class="slide">
+    <h1 style="font-size: 72px; margin-top: 40vh; color: #005f99;">Gracias...</h1>
+  </div>
+
+  <div class="nav-buttons">
+    <button onclick="prevSlide()">Anterior</button>
+    <button onclick="nextSlide()">Siguiente</button>
+  </div>
+
+</body>
+</html>
