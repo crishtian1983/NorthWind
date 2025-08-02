@@ -13,3 +13,6 @@ Ciencia de Datos e Inteligencia Artificial
 ```
 Msc. Juan Marcelo Claure Salinas
 ```
+## Abrir presentación
+[Click aqui](https://crishtian1983.github.io/NorthWind/)
+
