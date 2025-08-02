@@ -1,0 +1,867 @@
+{
+  "name": "SemanticModel",
+  "compatibilityLevel": 1200,
+  "model": {
+    "culture": "es-MX",
+    "dataSources": [
+      {
+        "name": "MiConexion",
+        "connectionString": "Provider=SQLOLEDB;Data Source=DESKTOP-5UF7429;Initial Catalog=NorthWindDW;Integrated Security=SSPI;Persist Security Info=false",
+        "impersonationMode": "impersonateCurrentUser",
+        "annotations": [
+          {
+            "name": "ConnectionEditUISource",
+            "value": "SqlServer"
+          }
+        ]
+      },
+      {
+        "name": "SqlServer DESKTOP-5UF7429 NorthWindDW",
+        "connectionString": "Provider=SQLOLEDB;Data Source=DESKTOP-5UF7429;Initial Catalog=NorthWindDW;User ID=sa;Persist Security Info=false",
+        "impersonationMode": "impersonateServiceAccount",
+        "annotations": [
+          {
+            "name": "ConnectionEditUISource",
+            "value": "SqlServer"
+          }
+        ]
+      }
+    ],
+    "tables": [
+      {
+        "name": "Customers",
+        "columns": [
+          {
+            "name": "CustomersSK",
+            "dataType": "int64",
+            "isHidden": true,
+            "sourceColumn": "CustomersSK",
+            "sourceProviderType": "Integer"
+          },
+          {
+            "name": "CustomerID",
+            "dataType": "string",
+            "isHidden": true,
+            "sourceColumn": "CustomerID",
+            "sourceProviderType": "WChar"
+          },
+          {
+            "name": "CompanyName",
+            "dataType": "string",
+            "sourceColumn": "CompanyName",
+            "sourceProviderType": "WChar"
+          },
+          {
+            "name": "ContactName",
+            "dataType": "string",
+            "sourceColumn": "ContactName",
+            "sourceProviderType": "WChar"
+          },
+          {
+            "name": "ContactTitle",
+            "dataType": "string",
+            "sourceColumn": "ContactTitle",
+            "sourceProviderType": "WChar"
+          },
+          {
+            "name": "Address",
+            "dataType": "string",
+            "sourceColumn": "Address",
+            "sourceProviderType": "WChar"
+          },
+          {
+            "name": "City",
+            "dataType": "string",
+            "sourceColumn": "City",
+            "sourceProviderType": "WChar"
+          },
+          {
+            "name": "Region",
+            "dataType": "string",
+            "sourceColumn": "Region",
+            "sourceProviderType": "WChar"
+          },
+          {
+            "name": "PostalCode",
+            "dataType": "string",
+            "sourceColumn": "PostalCode",
+            "sourceProviderType": "WChar"
+          },
+          {
+            "name": "Country",
+            "dataType": "string",
+            "sourceColumn": "Country",
+            "sourceProviderType": "WChar"
+          },
+          {
+            "name": "Phone",
+            "dataType": "string",
+            "sourceColumn": "Phone",
+            "sourceProviderType": "WChar"
+          },
+          {
+            "name": "Fax",
+            "dataType": "string",
+            "sourceColumn": "Fax",
+            "sourceProviderType": "WChar"
+          }
+        ],
+        "partitions": [
+          {
+            "name": "DimCustomers",
+            "dataView": "full",
+            "source": {
+              "type": "query",
+              "query": " \t\t\t\tSELECT [dbo].[DimCustomers].*   FROM [dbo].[DimCustomers] ",
+              "dataSource": "SqlServer DESKTOP-5UF7429 NorthWindDW"
+            }
+          }
+        ],
+        "annotations": [
+          {
+            "name": "_TM_ExtProp_QueryDefinition",
+            "value": " \t\t\t\tSELECT [dbo].[DimCustomers].*   FROM [dbo].[DimCustomers] "
+          },
+          {
+            "name": "_TM_ExtProp_DbTableName",
+            "value": "DimCustomers"
+          },
+          {
+            "name": "_TM_ExtProp_DbSchemaName",
+            "value": "dbo"
+          }
+        ]
+      },
+      {
+        "name": "Fecha",
+        "columns": [
+          {
+            "name": "DateKey",
+            "dataType": "int64",
+            "isHidden": true,
+            "sourceColumn": "DateKey",
+            "sourceProviderType": "Integer"
+          },
+          {
+            "name": "FullDate",
+            "dataType": "string",
+            "isHidden": true,
+            "sourceColumn": "FullDate",
+            "sourceProviderType": "WChar"
+          },
+          {
+            "name": "DayNumberOfWeek",
+            "dataType": "int64",
+            "isHidden": true,
+            "sourceColumn": "DayNumberOfWeek",
+            "sourceProviderType": "UnsignedTinyInt"
+          },
+          {
+            "name": "DayNameOfWeek",
+            "dataType": "string",
+            "isHidden": true,
+            "sourceColumn": "DayNameOfWeek",
+            "sourceProviderType": "WChar"
+          },
+          {
+            "name": "DayNumberOfMonth",
+            "dataType": "int64",
+            "isHidden": true,
+            "sourceColumn": "DayNumberOfMonth",
+            "sourceProviderType": "UnsignedTinyInt"
+          },
+          {
+            "name": "DayNumberOfYear",
+            "dataType": "int64",
+            "sourceColumn": "DayNumberOfYear",
+            "sourceProviderType": "SmallInt"
+          },
+          {
+            "name": "WeekNumberOfYear",
+            "dataType": "int64",
+            "isHidden": true,
+            "sourceColumn": "WeekNumberOfYear",
+            "sourceProviderType": "UnsignedTinyInt"
+          },
+          {
+            "name": "MonthName",
+            "dataType": "string",
+            "sourceColumn": "MonthName",
+            "sourceProviderType": "WChar"
+          },
+          {
+            "name": "MonthNumberOfYear",
+            "dataType": "int64",
+            "sourceColumn": "MonthNumberOfYear",
+            "sourceProviderType": "UnsignedTinyInt"
+          },
+          {
+            "name": "CalendarQuarter",
+            "dataType": "int64",
+            "sourceColumn": "CalendarQuarter",
+            "sourceProviderType": "UnsignedTinyInt"
+          },
+          {
+            "name": "CalendarYear",
+            "dataType": "int64",
+            "sourceColumn": "CalendarYear",
+            "sourceProviderType": "SmallInt"
+          },
+          {
+            "name": "CalendarSemester",
+            "dataType": "int64",
+            "sourceColumn": "CalendarSemester",
+            "sourceProviderType": "UnsignedTinyInt"
+          }
+        ],
+        "partitions": [
+          {
+            "name": "DimDate",
+            "dataView": "full",
+            "source": {
+              "type": "query",
+              "query": " \t\t\t\tSELECT [dbo].[DimDate].*   FROM [dbo].[DimDate] ",
+              "dataSource": "SqlServer DESKTOP-5UF7429 NorthWindDW"
+            }
+          }
+        ],
+        "annotations": [
+          {
+            "name": "_TM_ExtProp_QueryDefinition",
+            "value": " \t\t\t\tSELECT [dbo].[DimDate].*   FROM [dbo].[DimDate] "
+          },
+          {
+            "name": "_TM_ExtProp_DbTableName",
+            "value": "DimDate"
+          },
+          {
+            "name": "_TM_ExtProp_DbSchemaName",
+            "value": "dbo"
+          }
+        ]
+      },
+      {
+        "name": "Employees",
+        "columns": [
+          {
+            "name": "EmployeesSK",
+            "dataType": "int64",
+            "isHidden": true,
+            "sourceColumn": "EmployeesSK",
+            "sourceProviderType": "Integer"
+          },
+          {
+            "name": "EmployeeID",
+            "dataType": "int64",
+            "isHidden": true,
+            "sourceColumn": "EmployeeID",
+            "sourceProviderType": "Integer"
+          },
+          {
+            "name": "LastName",
+            "dataType": "string",
+            "sourceColumn": "LastName",
+            "sourceProviderType": "WChar"
+          },
+          {
+            "name": "FirstName",
+            "dataType": "string",
+            "sourceColumn": "FirstName",
+            "sourceProviderType": "WChar"
+          },
+          {
+            "name": "Title",
+            "dataType": "string",
+            "sourceColumn": "Title",
+            "sourceProviderType": "WChar"
+          },
+          {
+            "name": "TitleOfCourtesy",
+            "dataType": "string",
+            "sourceColumn": "TitleOfCourtesy",
+            "sourceProviderType": "WChar"
+          },
+          {
+            "name": "BirthDate",
+            "dataType": "dateTime",
+            "sourceColumn": "BirthDate",
+            "formatString": "General Date",
+            "sourceProviderType": "DBTimeStamp"
+          },
+          {
+            "name": "HireDate",
+            "dataType": "dateTime",
+            "sourceColumn": "HireDate",
+            "formatString": "General Date",
+            "sourceProviderType": "DBTimeStamp"
+          },
+          {
+            "name": "Address",
+            "dataType": "string",
+            "sourceColumn": "Address",
+            "sourceProviderType": "WChar"
+          },
+          {
+            "name": "City",
+            "dataType": "string",
+            "sourceColumn": "City",
+            "sourceProviderType": "WChar"
+          },
+          {
+            "name": "Region",
+            "dataType": "string",
+            "sourceColumn": "Region",
+            "sourceProviderType": "WChar"
+          },
+          {
+            "name": "PostalCode",
+            "dataType": "string",
+            "sourceColumn": "PostalCode",
+            "sourceProviderType": "WChar"
+          },
+          {
+            "name": "Country",
+            "dataType": "string",
+            "sourceColumn": "Country",
+            "sourceProviderType": "WChar"
+          },
+          {
+            "name": "HomePhone",
+            "dataType": "string",
+            "sourceColumn": "HomePhone",
+            "sourceProviderType": "WChar"
+          },
+          {
+            "name": "Extension",
+            "dataType": "string",
+            "sourceColumn": "Extension",
+            "sourceProviderType": "WChar"
+          },
+          {
+            "name": "ReportsTo",
+            "dataType": "int64",
+            "sourceColumn": "ReportsTo",
+            "sourceProviderType": "Integer"
+          },
+          {
+            "name": "PhotoPath",
+            "dataType": "string",
+            "sourceColumn": "PhotoPath",
+            "sourceProviderType": "WChar"
+          },
+          {
+            "name": "TerritoryDescription",
+            "dataType": "string",
+            "sourceColumn": "TerritoryDescription",
+            "sourceProviderType": "WChar"
+          },
+          {
+            "name": "RegionDescription",
+            "dataType": "string",
+            "sourceColumn": "RegionDescription",
+            "sourceProviderType": "WChar"
+          },
+          {
+            "type": "calculated",
+            "name": "Empleado",
+            "dataType": "string",
+            "isDataTypeInferred": true,
+            "expression": "CONCATENATE(CONCATENATE([FirstName], \" \"),[LastName])"
+          }
+        ],
+        "partitions": [
+          {
+            "name": "DimEmployees",
+            "dataView": "full",
+            "source": {
+              "type": "query",
+              "query": " \t\t\t\tSELECT [dbo].[DimEmployees].*   FROM [dbo].[DimEmployees] ",
+              "dataSource": "SqlServer DESKTOP-5UF7429 NorthWindDW"
+            }
+          }
+        ],
+        "annotations": [
+          {
+            "name": "_TM_ExtProp_QueryDefinition",
+            "value": " \t\t\t\tSELECT [dbo].[DimEmployees].*   FROM [dbo].[DimEmployees] "
+          },
+          {
+            "name": "_TM_ExtProp_DbTableName",
+            "value": "DimEmployees"
+          },
+          {
+            "name": "_TM_ExtProp_DbSchemaName",
+            "value": "dbo"
+          }
+        ]
+      },
+      {
+        "name": "Products",
+        "columns": [
+          {
+            "name": "ProductsSK",
+            "dataType": "int64",
+            "isHidden": true,
+            "sourceColumn": "ProductsSK",
+            "sourceProviderType": "Integer"
+          },
+          {
+            "name": "ProductID",
+            "dataType": "int64",
+            "isHidden": true,
+            "sourceColumn": "ProductID",
+            "sourceProviderType": "Integer"
+          },
+          {
+            "name": "ProductName",
+            "dataType": "string",
+            "sourceColumn": "ProductName",
+            "sourceProviderType": "WChar"
+          },
+          {
+            "name": "QuantityPerUnit",
+            "dataType": "string",
+            "sourceColumn": "QuantityPerUnit",
+            "sourceProviderType": "WChar"
+          },
+          {
+            "name": "UnitPrice",
+            "dataType": "double",
+            "sourceColumn": "UnitPrice",
+            "sourceProviderType": "Numeric"
+          },
+          {
+            "name": "UnitsInStock",
+            "dataType": "int64",
+            "sourceColumn": "UnitsInStock",
+            "sourceProviderType": "SmallInt"
+          },
+          {
+            "name": "UnitsOnOrder",
+            "dataType": "int64",
+            "sourceColumn": "UnitsOnOrder",
+            "sourceProviderType": "SmallInt"
+          },
+          {
+            "name": "ReorderLevel",
+            "dataType": "int64",
+            "sourceColumn": "ReorderLevel",
+            "sourceProviderType": "SmallInt"
+          },
+          {
+            "name": "Discontinued",
+            "dataType": "boolean",
+            "sourceColumn": "Discontinued",
+            "formatString": "\"TRUE\";\"TRUE\";\"FALSE\"",
+            "sourceProviderType": "Boolean"
+          },
+          {
+            "name": "CategoryName",
+            "dataType": "string",
+            "sourceColumn": "CategoryName",
+            "sourceProviderType": "WChar"
+          },
+          {
+            "name": "SuppliersSK",
+            "dataType": "int64",
+            "isHidden": true,
+            "sourceColumn": "SuppliersSK",
+            "sourceProviderType": "Integer"
+          }
+        ],
+        "partitions": [
+          {
+            "name": "DimProducts",
+            "dataView": "full",
+            "source": {
+              "type": "query",
+              "query": " \t\t\t\tSELECT [dbo].[DimProducts].*   FROM [dbo].[DimProducts] ",
+              "dataSource": "SqlServer DESKTOP-5UF7429 NorthWindDW"
+            }
+          }
+        ],
+        "annotations": [
+          {
+            "name": "_TM_ExtProp_QueryDefinition",
+            "value": " \t\t\t\tSELECT [dbo].[DimProducts].*   FROM [dbo].[DimProducts] "
+          },
+          {
+            "name": "_TM_ExtProp_DbTableName",
+            "value": "DimProducts"
+          },
+          {
+            "name": "_TM_ExtProp_DbSchemaName",
+            "value": "dbo"
+          }
+        ]
+      },
+      {
+        "name": "DimSuppliers",
+        "columns": [
+          {
+            "name": "SuppliersSK",
+            "dataType": "int64",
+            "isHidden": true,
+            "sourceColumn": "SuppliersSK",
+            "sourceProviderType": "Integer"
+          },
+          {
+            "name": "SupplierID",
+            "dataType": "int64",
+            "isHidden": true,
+            "sourceColumn": "SupplierID",
+            "sourceProviderType": "Integer"
+          },
+          {
+            "name": "CompanyName",
+            "dataType": "string",
+            "sourceColumn": "CompanyName",
+            "sourceProviderType": "WChar"
+          },
+          {
+            "name": "ContactName",
+            "dataType": "string",
+            "sourceColumn": "ContactName",
+            "sourceProviderType": "WChar"
+          },
+          {
+            "name": "ContactTitle",
+            "dataType": "string",
+            "sourceColumn": "ContactTitle",
+            "sourceProviderType": "WChar"
+          },
+          {
+            "name": "Address",
+            "dataType": "string",
+            "sourceColumn": "Address",
+            "sourceProviderType": "WChar"
+          },
+          {
+            "name": "City",
+            "dataType": "string",
+            "sourceColumn": "City",
+            "sourceProviderType": "WChar"
+          },
+          {
+            "name": "Region",
+            "dataType": "string",
+            "sourceColumn": "Region",
+            "sourceProviderType": "WChar"
+          },
+          {
+            "name": "PostalCode",
+            "dataType": "string",
+            "sourceColumn": "PostalCode",
+            "sourceProviderType": "WChar"
+          },
+          {
+            "name": "Country",
+            "dataType": "string",
+            "sourceColumn": "Country",
+            "sourceProviderType": "WChar"
+          },
+          {
+            "name": "Phone",
+            "dataType": "string",
+            "sourceColumn": "Phone",
+            "sourceProviderType": "WChar"
+          },
+          {
+            "name": "Fax",
+            "dataType": "string",
+            "sourceColumn": "Fax",
+            "sourceProviderType": "WChar"
+          },
+          {
+            "name": "HomePage",
+            "dataType": "string",
+            "sourceColumn": "HomePage",
+            "sourceProviderType": "WChar"
+          }
+        ],
+        "partitions": [
+          {
+            "name": "DimSuppliers",
+            "dataView": "full",
+            "source": {
+              "type": "query",
+              "query": " \t\t\t\tSELECT [dbo].[DimSuppliers].*   FROM [dbo].[DimSuppliers] ",
+              "dataSource": "SqlServer DESKTOP-5UF7429 NorthWindDW"
+            }
+          }
+        ],
+        "annotations": [
+          {
+            "name": "_TM_ExtProp_QueryDefinition",
+            "value": " \t\t\t\tSELECT [dbo].[DimSuppliers].*   FROM [dbo].[DimSuppliers] "
+          },
+          {
+            "name": "_TM_ExtProp_DbTableName",
+            "value": "DimSuppliers"
+          },
+          {
+            "name": "_TM_ExtProp_DbSchemaName",
+            "value": "dbo"
+          }
+        ]
+      },
+      {
+        "name": "Orders",
+        "columns": [
+          {
+            "name": "OrderID",
+            "dataType": "int64",
+            "isHidden": true,
+            "sourceColumn": "OrderID",
+            "sourceProviderType": "Integer"
+          },
+          {
+            "name": "ProductID",
+            "dataType": "int64",
+            "isHidden": true,
+            "sourceColumn": "ProductID",
+            "sourceProviderType": "Integer"
+          },
+          {
+            "name": "OrderDateKey",
+            "dataType": "int64",
+            "isHidden": true,
+            "sourceColumn": "OrderDateKey",
+            "sourceProviderType": "Integer"
+          },
+          {
+            "name": "RequiredDateKey",
+            "dataType": "int64",
+            "isHidden": true,
+            "sourceColumn": "RequiredDateKey",
+            "sourceProviderType": "Integer"
+          },
+          {
+            "name": "ShippedDateKey",
+            "dataType": "int64",
+            "isHidden": true,
+            "sourceColumn": "ShippedDateKey",
+            "sourceProviderType": "Integer"
+          },
+          {
+            "name": "Freight",
+            "dataType": "double",
+            "sourceColumn": "Freight",
+            "sourceProviderType": "Numeric"
+          },
+          {
+            "name": "ShipName",
+            "dataType": "string",
+            "sourceColumn": "ShipName",
+            "sourceProviderType": "WChar"
+          },
+          {
+            "name": "ShipAddress",
+            "dataType": "string",
+            "sourceColumn": "ShipAddress",
+            "sourceProviderType": "WChar"
+          },
+          {
+            "name": "ShipCity",
+            "dataType": "string",
+            "sourceColumn": "ShipCity",
+            "sourceProviderType": "WChar"
+          },
+          {
+            "name": "ShipRegion",
+            "dataType": "string",
+            "sourceColumn": "ShipRegion",
+            "sourceProviderType": "WChar"
+          },
+          {
+            "name": "ShipPostalCode",
+            "dataType": "string",
+            "sourceColumn": "ShipPostalCode",
+            "sourceProviderType": "WChar"
+          },
+          {
+            "name": "ShipCountry",
+            "dataType": "string",
+            "sourceColumn": "ShipCountry",
+            "sourceProviderType": "WChar"
+          },
+          {
+            "name": "CompanyName",
+            "dataType": "string",
+            "sourceColumn": "CompanyName",
+            "sourceProviderType": "WChar"
+          },
+          {
+            "name": "UnitPrice",
+            "dataType": "double",
+            "isHidden": true,
+            "sourceColumn": "UnitPrice",
+            "sourceProviderType": "Numeric"
+          },
+          {
+            "name": "Quantity",
+            "dataType": "int64",
+            "isHidden": true,
+            "sourceColumn": "Quantity",
+            "sourceProviderType": "SmallInt"
+          },
+          {
+            "name": "Discount",
+            "dataType": "double",
+            "isHidden": true,
+            "sourceColumn": "Discount",
+            "sourceProviderType": "Numeric"
+          },
+          {
+            "name": "ProductsSK",
+            "dataType": "int64",
+            "isHidden": true,
+            "sourceColumn": "ProductsSK",
+            "sourceProviderType": "Integer"
+          },
+          {
+            "name": "EmployeesSK",
+            "dataType": "int64",
+            "isHidden": true,
+            "sourceColumn": "EmployeesSK",
+            "sourceProviderType": "Integer"
+          },
+          {
+            "name": "CustomersSK",
+            "dataType": "int64",
+            "isHidden": true,
+            "sourceColumn": "CustomersSK",
+            "sourceProviderType": "Integer"
+          }
+        ],
+        "partitions": [
+          {
+            "name": "FactOrders",
+            "dataView": "full",
+            "source": {
+              "type": "query",
+              "query": " \t\t\t\tSELECT [dbo].[FactOrders].*   FROM [dbo].[FactOrders] ",
+              "dataSource": "SqlServer DESKTOP-5UF7429 NorthWindDW"
+            }
+          }
+        ],
+        "measures": [
+          {
+            "name": "Total Ventas",
+            "expression": "SUMx(    Orders,Orders[UnitPrice] * Orders[Quantity]* (1 - Orders[Discount]))"
+          },
+          {
+            "name": "TotalDescuento",
+            "expression": " SUMX(Orders, Orders[UnitPrice] * Orders[Quantity] * Orders[Discount])"
+          },
+          {
+            "name": "PromedioValorDePedido",
+            "expression": " [Total Ventas] / DISTINCTCOUNT(Orders[OrderID])"
+          },
+          {
+            "name": "PromedioVentasPorUnidad",
+            "expression": [
+              " ",
+              "DIVIDE([Total Ventas],[TotalUnidadesVendidas])"
+            ]
+          },
+          {
+            "name": "TotalUnidadesVendidas",
+            "expression": [
+              "",
+              "SUM(Orders[Quantity])"
+            ]
+          },
+          {
+            "name": "Total Pedidos",
+            "expression": [
+              "",
+              "DISTINCTCOUNT(Orders[OrderID])"
+            ]
+          },
+          {
+            "name": "Descuento Promedio",
+            "expression": [
+              "",
+              "AVERAGE(Orders[Discount])"
+            ]
+          }
+        ],
+        "annotations": [
+          {
+            "name": "_TM_ExtProp_QueryDefinition",
+            "value": " \t\t\t\tSELECT [dbo].[FactOrders].*   FROM [dbo].[FactOrders] "
+          },
+          {
+            "name": "_TM_ExtProp_DbTableName",
+            "value": "FactOrders"
+          },
+          {
+            "name": "_TM_ExtProp_DbSchemaName",
+            "value": "dbo"
+          }
+        ]
+      }
+    ],
+    "relationships": [
+      {
+        "name": "5c182d9c-dc83-4125-a5fd-1a749870f780",
+        "fromTable": "Orders",
+        "fromColumn": "RequiredDateKey",
+        "toTable": "Fecha",
+        "toColumn": "DateKey",
+        "isActive": false
+      },
+      {
+        "name": "ef81e967-bc59-424d-a608-b68c1bb52314",
+        "fromTable": "Orders",
+        "fromColumn": "ShippedDateKey",
+        "toTable": "Fecha",
+        "toColumn": "DateKey",
+        "isActive": false
+      },
+      {
+        "name": "843e6473-b082-4669-9d65-2a0e1cf2d357",
+        "fromTable": "Products",
+        "fromColumn": "SuppliersSK",
+        "toTable": "DimSuppliers",
+        "toColumn": "SuppliersSK"
+      },
+      {
+        "name": "8d872c90-dffd-49ce-9883-d28f214e6e98",
+        "fromTable": "Orders",
+        "fromColumn": "CustomersSK",
+        "toTable": "Customers",
+        "toColumn": "CustomersSK"
+      },
+      {
+        "name": "f38f005a-b3ea-44d6-9da8-841c2f6b5350",
+        "fromTable": "Orders",
+        "fromColumn": "OrderDateKey",
+        "toTable": "Fecha",
+        "toColumn": "DateKey"
+      },
+      {
+        "name": "f7cb7577-8a77-41b0-9fc8-da14471a5f59",
+        "fromTable": "Orders",
+        "fromColumn": "EmployeesSK",
+        "toTable": "Employees",
+        "toColumn": "EmployeesSK"
+      },
+      {
+        "name": "1a38c651-84d8-43ad-aba7-6d35f6c792d7",
+        "fromTable": "Orders",
+        "fromColumn": "ProductsSK",
+        "toTable": "Products",
+        "toColumn": "ProductsSK"
+      }
+    ],
+    "annotations": [
+      {
+        "name": "ClientCompatibilityLevel",
+        "value": "400"
+      }
+    ]
+  },
+  "id": "SemanticModel"
+}
